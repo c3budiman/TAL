@@ -43,7 +43,7 @@ Website management is automatically set u just need to login as admin and go to 
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this project, please send an e-mail to me at c3budiman@gmail.com . All security vulnerabilities will be promptly addressed.
 
 ### License
 
