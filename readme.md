@@ -1,22 +1,41 @@
-## Laravel PHP Framework
+## Template Admin Laravel
+template ini buat php 5.6 di laravel 5.1
+template ini dapat dipakai buat projek yang butuh cepet kelar, cara pake nya :
+composer install
+buat file .env atau copy .env.example lalu edit dan sesuaikan dengan database
+php artisan key:generate
+php artisan migrate
+now open /daftar and register users.
+enjoy!
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Roles Management
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Roles can only be defined once!
+to define roles u need to edit the migration files inside /database/migration/2014_10_12_000000_create_users_table.php
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+to manage roles use controller!
+for example if u want to limit access for some controller admin only then u need to put this in your controller :
 
-## Official Documentation
+public function getRoleAdmin() {
+  $rolesyangberhak = DB::table('roles')->where('id','=','1')->first()->namaRule;
+  //the id can be changed for each roles
+  return $rolesyangberhak;
+}
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+public function __construct()
+{
+    $this->middleware('auth');
+    $this->middleware('rule:'.$this->getRoleAdmin().',nothingelse');
+}
 
-## Contributing
+## User Management
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+the /daftar can register user and automatically set it to admin level.
+you can make /daftar disabled in routes.php
+
+## Website Management
+
+Website management is automatically set u just need to login as admin and go to the menu and set everything that you need there.
 
 ## Security Vulnerabilities
 
@@ -24,4 +43,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ### License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+The Template Admin Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
