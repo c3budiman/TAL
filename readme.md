@@ -3,8 +3,8 @@
 <br>
 <h2>template ini dapat dipakai buat projek yang butuh cepet kelar, cara pake nya : </h2>
 <ol>
-```bash 
-  composer install
+```bash
+composer install
 ```
 <li> buat file .env atau copy .env.example lalu edit dan sesuaikan dengan database </li>
 ```bash 
