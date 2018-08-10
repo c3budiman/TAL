@@ -2,14 +2,16 @@
 <h2>template ini buat php 5.6 di laravel 5.1</h2>
 <br>
 <h2>template ini dapat dipakai buat projek yang butuh cepet kelar, cara pake nya : </h2>
-1. composer install
-2. buat file .env atau copy .env.example lalu edit dan sesuaikan dengan database
-3. php artisan key:generate
-4. php artisan migrate
-5. php artisan vendor:publish
-6. press 0 and enter
-7. now open /daftar and register one user.
-8. enjoy!
+<ol>
+<li> 1. composer install </li>
+<li> 2. buat file .env atau copy .env.example lalu edit dan sesuaikan dengan database </li>
+<li> 3. php artisan key:generate </li>
+<li> 4. php artisan migrate </li>
+<li> 5. php artisan vendor:publish </li>
+<li> 6. press 0 and enter </li>
+<li> 7. now open /daftar and register one user. </li>
+<li> 8. enjoy! </li>
+</ol>
 
 ## Roles Management
 
