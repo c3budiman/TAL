@@ -3,14 +3,14 @@
 <br>
 <h2>template ini dapat dipakai buat projek yang butuh cepet kelar, cara pake nya : </h2>
 <ol>
-<li> 1. composer install </li>
-<li> 2. buat file .env atau copy .env.example lalu edit dan sesuaikan dengan database </li>
-<li> 3. php artisan key:generate </li>
-<li> 4. php artisan migrate </li>
-<li> 5. php artisan vendor:publish </li>
-<li> 6. press 0 and enter </li>
-<li> 7. now open /daftar and register one user. </li>
-<li> 8. enjoy! </li>
+<li> ```bash composer install``` </li>
+<li> buat file .env atau copy .env.example lalu edit dan sesuaikan dengan database </li>
+<li> ```bash php artisan key:generate``` </li>
+<li> ```bash php artisan migrate``` </li>
+<li> ```bash php artisan vendor:publish``` </li>
+<li> press 0 and enter </li>
+<li> now open /daftar and register one user. </li>
+<li> enjoy! </li>
 </ol>
 
 ## Roles Management
