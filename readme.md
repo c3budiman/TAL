@@ -5,7 +5,9 @@ composer install
 buat file .env atau copy .env.example lalu edit dan sesuaikan dengan database
 php artisan key:generate
 php artisan migrate
-now open /daftar and register users.
+php artisan vendor:publish
+press 0 and enter
+now open /daftar and register one user.
 enjoy!
 
 ## Roles Management
@@ -16,6 +18,7 @@ to define roles u need to edit the migration files inside /database/migration/20
 to manage roles use controller!
 for example if u want to limit access for some controller admin only then u need to put this in your controller :
 
+```bash
 public function getRoleAdmin() {
   $rolesyangberhak = DB::table('roles')->where('id','=','1')->first()->namaRule;
   //the id can be changed for each roles
@@ -27,6 +30,7 @@ public function __construct()
     $this->middleware('auth');
     $this->middleware('rule:'.$this->getRoleAdmin().',nothingelse');
 }
+```
 
 ## User Management
 
