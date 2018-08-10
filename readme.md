@@ -3,11 +3,11 @@
 <br>
 <h2>template ini dapat dipakai buat projek yang butuh cepet kelar, cara pake nya : </h2>
 <ol>
-<li> ```bash composer install``` </li>
+```bash composer install```
 <li> buat file .env atau copy .env.example lalu edit dan sesuaikan dengan database </li>
-<li> ```bash php artisan key:generate``` </li>
-<li> ```bash php artisan migrate``` </li>
-<li> ```bash php artisan vendor:publish``` </li>
+```bash php artisan key:generate```
+```bash php artisan migrate```
+```bash php artisan vendor:publish```
 <li> press 0 and enter </li>
 <li> now open /daftar and register one user. </li>
 <li> enjoy! </li>
