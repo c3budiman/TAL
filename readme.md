@@ -1,14 +1,15 @@
 ## Template Admin Laravel
-template ini buat php 5.6 di laravel 5.1
-template ini dapat dipakai buat projek yang butuh cepet kelar, cara pake nya :
-composer install
-buat file .env atau copy .env.example lalu edit dan sesuaikan dengan database
-php artisan key:generate
-php artisan migrate
-php artisan vendor:publish
-press 0 and enter
-now open /daftar and register one user.
-enjoy!
+<h2>template ini buat php 5.6 di laravel 5.1</h2>
+<br>
+<h2>template ini dapat dipakai buat projek yang butuh cepet kelar, cara pake nya : </h2>
+1. composer install
+2. buat file .env atau copy .env.example lalu edit dan sesuaikan dengan database
+3. php artisan key:generate
+4. php artisan migrate
+5. php artisan vendor:publish
+6. press 0 and enter
+7. now open /daftar and register one user.
+8. enjoy!
 
 ## Roles Management
 
