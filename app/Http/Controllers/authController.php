@@ -11,6 +11,9 @@ use App\Sidebar;
 use Excel;
 use Datatables;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Hash;
+
+
 class authController extends Controller
 {
   public function __construct()
@@ -41,6 +44,20 @@ class authController extends Controller
   }
   public function UpdateProfile(Request $request) {
     if ($request->hasFile('tes')) {
+      //change the password here...
+      if ($request->password2) {
+        $password = $request->password;
+        $passwordbaru1 = $request->password1;
+        $passwordbaru2 = $request->password2;
+        if ($passwordbaru1 == $passwordbaru2) {
+                //ganti password here
+                $request->user()->fill(['password'=>Hash::make($passwordbaru1)])->save();
+          }
+          else {
+            return Redirect::back()->withErrors(['Password baru tidak sama', 'Kredensial anda salah']);
+          }
+      }
+
       $namafile = $request->file('tes')->getClientOriginalName();
       $ext = $request->file('tes')->getClientOriginalExtension();
       $newNamaFile = Auth::User()->email .'-id_'. Auth::User()->id . '.' .$ext;
@@ -66,6 +83,19 @@ class authController extends Controller
         return Redirect::back()->withErrors(['format file salah, tidak bisa diupload']);
       }
     } else {
+      //change the password here...
+      if ($request->password2) {
+        $password = $request->password;
+        $passwordbaru1 = $request->password1;
+        $passwordbaru2 = $request->password2;
+        if ($passwordbaru1 == $passwordbaru2) {
+                //ganti password here
+                $request->user()->fill(['password'=>Hash::make($passwordbaru1)])->save();
+          }
+          else {
+            return Redirect::back()->withErrors(['Password baru tidak sama', 'Kredensial anda salah']);
+          }
+      }
       //update db without poto profile
       //update db
       $users = Auth::user();
